@@ -1,0 +1,35 @@
+public class shouhuoji {
+    /*自动售货机里的面向对象思想
+    不是，你过去把钱给了售货机，然后东西出来了
+    自动售货机里有每个东西的价格，你投入的余额，今天收入的总额，这是他的数据（属性）,也是这部自动售货机的属性
+    比如说可以看见余额，放钱，拿到钱，找零等等，我们要看见哪些东西组成了场景中的东西
+    这个场景里的东西能为我们做什么事，这就是面向对象；
+     */
+    int price=80;
+    int balance;
+    int total;
+    void showPrompt(){
+        System.out.println("welcome");
+    }
+    void insertmoney(int amount){
+        balance+=amount;
+    }
+    void showbalance(){
+        System.out.println(balance);
+    }
+    void getfood(){
+        if(balance>=price){
+            System.out.println("here you are");
+            balance-=price;
+            total+=price;
+        }
+    }
+    public static void main(String[] args) {
+        shouhuoji sj=new shouhuoji();
+        sj.showPrompt();
+        sj.showbalance();
+        sj.insertmoney(100);
+        sj.getfood();
+        sj.showbalance();
+    }
+}
